@@ -1,17 +1,36 @@
 package ru.netology.servise;
 
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        TicketTimeComparator comparator = new TicketTimeComparator();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Ticket ticket1 = new Ticket("Ростов",
+                "Москва",
+                5000,
+                15,
+                17);
+
+        Ticket ticket2 = new Ticket("Ростов",
+                "Москва",
+                13000,
+                18,
+                20);
+
+        Ticket ticket3 = new Ticket("Ростов",
+                "Москва",
+                7000,
+                19,
+                22);
+
+        Ticket[] tickets = {ticket1, ticket2, ticket3};
+
+        System.out.println(ticket1.compareTo(ticket3));
+
+        Arrays.sort(tickets);
+  //      Arrays.sort(tickets, comparator);
     }
 }
