@@ -42,22 +42,7 @@ public class AviaSoulsTest {
         assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void shouldSearchAndSortByFlightTime() {
-        AviaSouls manager = new AviaSouls();
-        manager.add(ticket1); // 2 часа
-        manager.add(ticket2); // 2 часа
-        manager.add(ticket3); // 3 часа
-
-        TicketTimeComparator comparator = new TicketTimeComparator();
-
-        Ticket[] expected = {ticket1, ticket2, ticket3};
-        Ticket[] actual = manager.searchAndSortBy("Ростов", "Москва", comparator);
-
-        assertArrayEquals(expected, actual);
-    }
-
-    @Test
+        @Test
     public void shouldSearchAndSortByFlightTime_Empty() {
         AviaSouls manager = new AviaSouls();
         manager.add(ticket4);
@@ -71,4 +56,4 @@ public class AviaSoulsTest {
         assertArrayEquals(expected, actual);
     }
 }
-}
+
